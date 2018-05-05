@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 require_relative "../lib/changelog"
+require_relative "../lib/cache"
 
 VERSION = "0.0.1"
 
@@ -10,9 +11,39 @@ def run!
     return
   end
 
+  cache = ChangelogsCache.new
+
   ARGV.formulae.each do |f|
+    cached_url = cache.url_for_formula(f)
+    if cached_url == ""
+      # TODO add a CONTRIBUTING.md file
+      puts <<~EOS
+        The formula '#{f.name}' doesn't have any Changelog that we know of.
+        Please submit a pull-request if you think it should:
+          https://github.com/bfontaine/homebrew-changelog
+
+      EOS
+      next
+    end
+
+    unless cached_url.nil?
+      open_browser cached_url
+      next
+    end
+
     url = Changelog.url_for_formula(f)
-    open_browser url if url
+
+    if url
+      open_browser url
+      next
+    end
+
+    puts <<~EOS
+      I couldn't find a Changelog for the formula '#{f.name}'.
+      Please submit a pull-request if you know any:
+          https://github.com/bfontaine/homebrew-changelog
+
+    EOS
   end
 end
 

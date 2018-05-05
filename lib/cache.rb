@@ -14,12 +14,21 @@ class ChangelogsCache
   end
 
   def url_for_formula_name(name)
+    prefix = "#{name}:"
 
+    for line in raw_lines
+      return line.chomp.split(":", 2)[1] if line.start_with? prefix
+    end
+    nil
   end
 
   private
 
-  def _lines
+  def raw_lines
+    @raw_lines ||= _read_raw_lines
+  end
+
+  def _read_raw_lines
     File.readlines(@path)
   rescue
     []

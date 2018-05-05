@@ -18,13 +18,8 @@ def formula_all_urls(f)
 end
 
 def open_browser(url)
-  if OS.mac?
-    system "xdg-open", url
-  elsif OS.linux?
-    system "open", url
-  else
-    puts url
-  end
+  puts "Opening #{url}..." if ARGV.verbose?
+  fork { exec_browser url }
 end
 
 class Changelog
