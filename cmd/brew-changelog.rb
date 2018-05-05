@@ -16,11 +16,10 @@ def run!
   ARGV.formulae.each do |f|
     cached_url = cache.url_for_formula(f)
     if cached_url == ""
-      # TODO add a CONTRIBUTING.md file
       puts <<~EOS
         The formula '#{f.name}' doesn't have any Changelog that we know of.
         Please submit a pull-request if you think it should:
-          https://github.com/bfontaine/homebrew-changelog
+          https://github.com/bfontaine/homebrew-changelog/blob/master/CONTRIBUTING.md
 
       EOS
       next
@@ -41,7 +40,7 @@ def run!
     puts <<~EOS
       I couldn't find a Changelog for the formula '#{f.name}'.
       Please submit a pull-request if you know any:
-          https://github.com/bfontaine/homebrew-changelog
+          https://github.com/bfontaine/homebrew-changelog/blob/master/CONTRIBUTING.md
 
     EOS
   end
