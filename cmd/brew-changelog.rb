@@ -5,6 +5,12 @@ require "shellwords"
 
 VERSION = "0.0.1"
 
+CHANGELOG_FILENAMES = %w[
+  changes changelog
+].map do |base|
+  %w[.md .markdown .text].map { |ext| base + ext }
+end.flatten
+
 class Formula
   def all_urls
     @all_urls ||= [
@@ -61,16 +67,7 @@ class Changelog
   end
 
   def changelog_filename?(filename)
-    %w[
-      changes
-      changes.md
-      changes.markdown
-      changes.txt
-      changelog
-      changelog.md
-      changelog.markdown
-      changelog.txt
-    ].include? filename.strip.downcase
+    CHANGELOG_FILENAMES.include? filename.strip.downcase
   end
 end
 
