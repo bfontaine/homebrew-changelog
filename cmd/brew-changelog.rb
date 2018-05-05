@@ -117,8 +117,13 @@ class GitHubChangelog < Changelog
 end
 
 def open_browser(url)
-  # TODO https://stackoverflow.com/a/14053693/735926
-  system "open", url
+  if OS.mac?
+    system "xdg-open", url
+  elsif OS.linux?
+    system "open", url
+  else
+    puts url
+  end
 end
 
 def run!
