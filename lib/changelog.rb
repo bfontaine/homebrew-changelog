@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
 
+require "json"
+
 CHANGELOG_FILENAMES = %w[
   changes changelog
 ].map do |base|
@@ -26,12 +28,7 @@ def open_browser(url)
 end
 
 class Changelog
-  def url
-    raise NotImplementedError.new
-  end
-
   class << self
-
     def for_formula(formula)
       for impl in implementations
         inst = impl.instance_for_formula formula
@@ -60,14 +57,20 @@ class Changelog
     end
   end
 
+  attr_reader :formula
+
   def initialize(formula)
     @formula = formula
+  end
+
+  def url
+    raise NotImplementedError.new
   end
 
   protected
 
   def curl(*args)
-    `curl -fsSL #{Shellwords.join(args)}`
+    Utils.popen_read("curl", "-fsSL", *args)
   end
 
   def changelog_filename?(filename)

@@ -1,8 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-require "json"
-require "shellwords"
-
 require_relative "../lib/changelog"
 
 VERSION = "0.0.1"
