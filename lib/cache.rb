@@ -17,7 +17,7 @@ class ChangelogsCache
     prefix = "#{name}:"
 
     for line in raw_lines
-      return line.chomp.split(":", 2)[1] if line.start_with? prefix
+      return line.chomp.split(":", 2)[1].strip if line.start_with? prefix
     end
     nil
   end

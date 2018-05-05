@@ -19,3 +19,15 @@ def compute_coverage
 
   klasses
 end
+
+def print_discovered_cache
+  Formula.each do |f|
+    chg = Changelog.for_formula(f)
+    next if chg.nil?
+    begin
+      puts "#{f.name}: #{chg.url}"
+      sleep 0.5
+    rescue
+    end
+  end
+end

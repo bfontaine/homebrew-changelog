@@ -1,0 +1,57 @@
+arx-libertatis:
+b2sum:
+bash-snippets: https://github.com/alexanderepstein/Bash-Snippets/blob/master/changelog.md
+bde:
+boom-completion: https://github.com/holman/boom/blob/master/CHANGELOG.md
+borg:
+cask:
+ccat:
+cfssl:
+citus: https://github.com/citusdata/citus/blob/master/CHANGELOG.md
+couchdb-lucene:
+cpprestsdk: https://github.com/Microsoft/cpprestsdk/blob/master/changelog.md
+cromwell: https://github.com/broadinstitute/cromwell/blob/develop/CHANGELOG.md
+crystal-icr: https://github.com/crystal-community/icr/blob/master/CHANGELOG.md
+direnv: https://github.com/direnv/direnv/blob/master/CHANGELOG.md
+dlib:
+dmtx-utils:
+fish: https://github.com/fish-shell/fish-shell/blob/master/CHANGELOG.md
+giflossy:
+git-ftp: https://github.com/git-ftp/git-ftp/blob/master/CHANGELOG.md
+git-gerrit:
+git-test:
+git-when-merged:
+glew:
+go-bindata:
+grt: https://github.com/nickgillian/grt/blob/master/CHANGELOG.md
+h2o:
+haxe:
+hyperscan: https://github.com/intel/hyperscan/blob/master/CHANGELOG.md
+kops: https://github.com/kubernetes/kops/blob/master/CHANGELOG.md
+kubernetes-cli: https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md
+latexdiff:
+leptonica:
+libbitcoin:
+lmdb:
+math-comp:
+minimesos:
+moco:
+mongo-cxx-driver:
+open-babel:
+openmsx:
+pam-u2f:
+pip-completion:
+pyenv-virtualenvwrapper:
+restic: https://github.com/restic/restic/blob/master/CHANGELOG.md
+rlvm:
+sickle:
+simg2img:
+sub2srt:
+tasksh:
+tectonic:
+trezor-agent:
+urdfdom:
+watchexec:
+xbee-comm:
+zsdx:
+zsh-completions:
