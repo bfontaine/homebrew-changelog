@@ -3,7 +3,7 @@
 require "json"
 
 CHANGELOG_FILENAMES = %w[
-  changes changelog
+  changes changelog news
 ].map do |base|
   ["", ".md", ".markdown", ".text", ".txt"].map { |ext| base + ext }
 end.flatten
@@ -113,5 +113,48 @@ class GitHubChangelog < Changelog
         end
 
     d["html_url"] if d
+  end
+end
+
+class GitlabChangelog < Changelog
+  class << self
+    def instance_for_formula(formula)
+      for url in formula_all_urls(formula)
+        prefix_repo = guess_gitlab_repo(url)
+        return self.new(formula, prefix_repo) if prefix_repo
+      end
+      nil
+    end
+
+    def guess_gitlab_repo(url)
+      case url
+      # https://gitlab.gnome.org/GNOME/template-glib/blob/master/NEWS
+      # https://gitlab.com/procps-ng/procps/blob/master/ChangeLog
+      when %r{^(https?://(?:gitlab\.com|gitlab\.[a-z]+\.org))/([^/]+/[^/#]+)}
+        [Regexp.last_match[1],
+         Regexp.last_match[2].sub(/\.git$/, "")]
+      end
+    end
+  end
+
+  def initialize(formula, prefix_repo)
+    super formula
+    @prefix, @repo = prefix_repo
+  end
+
+  def url
+    @url ||= find_url
+  end
+
+  private
+
+  def find_url
+    # Gitlab doesn't have a 'list files' API
+    html = curl("#{@prefix}/#{@repo}/tree/master")
+    re = "(?:#{CHANGELOG_FILENAMES.map { |s| Regexp.escape(s) } * "|"})"
+
+    if html =~ %r{<a [^>]*href="(/#{@repo}/blob/master/#{re})"}i
+      "#{@prefix}#{Regexp.last_match[1]}"
+    end
   end
 end
