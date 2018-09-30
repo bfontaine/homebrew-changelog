@@ -5,7 +5,7 @@ require "json"
 CHANGELOG_FILENAMES = %w[
   changes changelog
 ].map do |base|
-  %w[.md .markdown .text].map { |ext| base + ext }
+  ["", ".md", ".markdown", ".text", ".txt"].map { |ext| base + ext }
 end.flatten
 
 def formula_all_urls(f)
