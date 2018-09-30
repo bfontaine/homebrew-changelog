@@ -16,10 +16,8 @@ class ChangelogsCache
   def url_for_formula_name(name)
     prefix = "#{name}:"
 
-    for line in raw_lines
-      return line.chomp.split(":", 2)[1].strip if line.start_with? prefix
-    end
-    nil
+    line = raw_lines.find { |raw_line| raw_line.start_with? prefix }
+    line.chomp.split(":", 2)[1].strip if line
   end
 
   private
