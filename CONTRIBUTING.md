@@ -15,9 +15,9 @@ The format is:
 <formula>: <url>
 ```
 
-Formulæ that are known not to have a changelog have an empty URL. Those with
+Formulas that are known not to have a changelog have an empty URL. Those with
 a changelog URL per version can use the `{{version}}` placeholder.
 
-Note we only list core formulæ in that file. Please keep the file sorted.
+Note we only list core formulas in that file. Please keep the file sorted.
 
 [cache]: https://github.com/bfontaine/homebrew-changelog/blob/master/resources/changelogs.txt
