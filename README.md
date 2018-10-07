@@ -15,11 +15,9 @@
 
 For example:
 
-    brew changelog youtube-dl
+    brew changelog git
 
-The command above opens [`youtube-dl`’s changelog][ydl] in your browser.
-
-[ydl]: https://github.com/rg3/youtube-dl/blob/master/ChangeLog
+The command above opens `git`’s in your browser.
 
 ## Caveats
 
