@@ -21,6 +21,7 @@ git-ftp: https://github.com/git-ftp/git-ftp/blob/master/CHANGELOG.md
 git-gerrit:
 git-test:
 git-when-merged:
+git: https://github.com/git/git/blob/master/Documentation/RelNotes/{{version}}.txt
 glew:
 go-bindata:
 grt: https://github.com/nickgillian/grt/blob/master/CHANGELOG.md

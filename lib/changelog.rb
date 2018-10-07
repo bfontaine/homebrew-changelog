@@ -21,7 +21,7 @@ end
 def open_browser(url)
   ohai "Opening #{url}..." if ARGV.verbose?
   if url.start_with? "/"  # `open [file://]/...` doesn't start a browser
-    ohai "This formula has a local changelog here:\n      #{url}"
+    puts "This formula has a local changelog here:\n    #{url}"
   else
     fork { exec_browser url }
   end

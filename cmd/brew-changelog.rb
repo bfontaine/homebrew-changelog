@@ -26,7 +26,8 @@ def run!
     end
 
     unless cached_url.nil?
-      open_browser cached_url
+      url = cached_url.sub %r[\{\{version\}\}], f.version.to_s
+      open_browser url
       next
     end
 
@@ -41,6 +42,9 @@ def run!
       I couldn't find a Changelog for the formula '#{f.name}'.
       Please submit a pull-request if you know any:
           https://github.com/bfontaine/homebrew-changelog/blob/master/CONTRIBUTING.md
+
+      You can open its homepage by running:
+        brew home #{f.name}
 
     EOS
   end
