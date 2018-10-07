@@ -1,58 +1,78 @@
-arx-libertatis:
+arx-libertatis: https://github.com/arx/ArxLibertatis/blob/master/CHANGELOG
 b2sum:
 bash-snippets: https://github.com/alexanderepstein/Bash-Snippets/blob/master/changelog.md
 bde:
+bind: https://gitlab.isc.org/isc-projects/bind9/blob/master/CHANGES
 boom-completion: https://github.com/holman/boom/blob/master/CHANGELOG.md
 borg:
 cask:
 ccat:
-cfssl:
+cfssl: https://github.com/cloudflare/cfssl/blob/master/CHANGELOG
 citus: https://github.com/citusdata/citus/blob/master/CHANGELOG.md
-couchdb-lucene:
+cogl: https://gitlab.gnome.org/GNOME/cogl/blob/master/ChangeLog
+couchdb-lucene: https://github.com/rnewson/couchdb-lucene/blob/master/NEWS
 cpprestsdk: https://github.com/Microsoft/cpprestsdk/blob/master/changelog.md
 cromwell: https://github.com/broadinstitute/cromwell/blob/develop/CHANGELOG.md
 crystal-icr: https://github.com/crystal-community/icr/blob/master/CHANGELOG.md
+deheader: https://gitlab.com/esr/deheader/blob/master/NEWS
 direnv: https://github.com/direnv/direnv/blob/master/CHANGELOG.md
 dlib:
-dmtx-utils:
+dmtx-utils: https://github.com/dmtx/dmtx-utils/blob/master/ChangeLog
+ecl: https://gitlab.com/embeddable-common-lisp/ecl/blob/master/CHANGELOG
 fish: https://github.com/fish-shell/fish-shell/blob/master/CHANGELOG.md
-giflossy:
+giflossy: https://github.com/kornelski/giflossy/blob/master/NEWS.md
 git-ftp: https://github.com/git-ftp/git-ftp/blob/master/CHANGELOG.md
 git-gerrit:
 git-test:
 git-when-merged:
 git: https://github.com/git/git/blob/master/Documentation/RelNotes/{{version}}.txt
+gitlab-runner: https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CHANGELOG.md
 glew:
+gnome-themes-standard: https://gitlab.gnome.org/GNOME/gnome-themes-extra/blob/master/NEWS
 go-bindata:
+graphviz: https://gitlab.com/graphviz/graphviz/blob/master/ChangeLog
+greed: https://gitlab.com/esr/greed/blob/master/NEWS
 grt: https://github.com/nickgillian/grt/blob/master/CHANGELOG.md
-h2o:
+gtk+: https://gitlab.gnome.org/GNOME/gtk/blob/master/NEWS
+h2o: https://github.com/h2o/h2o/blob/master/Changes
 haxe:
+highlight: https://gitlab.com/saalen/highlight/blob/master/ChangeLog
 hyperscan: https://github.com/intel/hyperscan/blob/master/CHANGELOG.md
+jsonrpc-glib: https://gitlab.gnome.org/GNOME/jsonrpc-glib/blob/master/NEWS
 kops: https://github.com/kubernetes/kops/blob/master/CHANGELOG.md
 kubernetes-cli: https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md
 latexdiff:
 leptonica:
-libbitcoin:
+libbitcoin: https://github.com/libbitcoin/libbitcoin/blob/master/ChangeLog
+libdazzle: https://gitlab.gnome.org/GNOME/libdazzle/blob/master/NEWS
+libxslt: https://gitlab.gnome.org/GNOME/libxslt/blob/master/ChangeLog
 lmdb:
-math-comp:
+math-comp: https://github.com/math-comp/math-comp/blob/master/ChangeLog
+mdds: https://gitlab.com/mdds/mdds/blob/master/CHANGELOG
 minimesos:
+mkvtoolnix: https://gitlab.com/mbunkus/mkvtoolnix/blob/master/NEWS.md
 moco:
 mongo-cxx-driver:
-open-babel:
+mutt: https://gitlab.com/muttmua/mutt/blob/master/ChangeLog
+open-babel: https://github.com/openbabel/openbabel/blob/master/NEWS
 openmsx:
-pam-u2f:
+pam-u2f: https://github.com/Yubico/pam-u2f/blob/master/NEWS
+pango: https://gitlab.gnome.org/GNOME/pango/blob/master/NEWS
+pdfgrep: https://gitlab.com/pdfgrep/pdfgrep/blob/master/NEWS.md
 pip-completion:
 pyenv-virtualenvwrapper:
+reposurgeon: https://gitlab.com/esr/reposurgeon/blob/master/NEWS
 restic: https://github.com/restic/restic/blob/master/CHANGELOG.md
-rlvm:
+rlvm: https://github.com/eglaysher/rlvm/blob/master/NEWS.TXT
 sickle:
 simg2img:
 sub2srt:
-tasksh:
-tectonic:
+tasksh: https://github.com/GothenburgBitFactory/taskshell/blob/master/ChangeLog
+tectonic: https://github.com/tectonic-typesetting/tectonic/blob/master/CHANGELOG.md
+template-glib: https://gitlab.gnome.org/GNOME/template-glib/blob/master/NEWS
 trezor-agent:
 urdfdom:
 watchexec:
 xbee-comm:
-zsdx:
+zsdx: https://github.com/solarus-games/zsdx/blob/dev/changelog.txt
 zsh-completions:
