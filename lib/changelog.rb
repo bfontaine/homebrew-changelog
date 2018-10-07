@@ -1,12 +1,13 @@
 # -*- coding: UTF-8 -*-
 
 require "json"
+require "set"
 
-CHANGELOG_FILENAMES = %w[
+CHANGELOG_FILENAMES = Set.new(%w[
   changes changelog news
 ].map do |base|
   ["", ".md", ".markdown", ".text", ".txt"].map { |ext| base + ext }
-end.flatten
+end.flatten)
 
 def formula_all_urls(f)
   urls = [f.homepage]
@@ -18,8 +19,12 @@ def formula_all_urls(f)
 end
 
 def open_browser(url)
-  puts "Opening #{url}..." if ARGV.verbose?
-  fork { exec_browser url }
+  ohai "Opening #{url}..." if ARGV.verbose?
+  if url.start_with? "/"  # `open [file://]/...` doesn't start a browser
+    ohai "This formula has a local changelog here:\n      #{url}"
+  else
+    fork { exec_browser url }
+  end
 end
 
 class Changelog
@@ -70,6 +75,28 @@ class Changelog
 
   def changelog_filename?(filename)
     CHANGELOG_FILENAMES.include? filename.strip.downcase
+  end
+end
+
+class InstalledChangelog < Changelog
+  # Look for a changelog directly in the prefix of installed formulae
+
+  class << self
+    def instance_for_formula(formula)
+      return unless formula.installed?
+      candidate = Dir["#{formula.prefix}/*"].find do |path|
+        name = Pathname.new(path).basename.to_s.downcase
+        CHANGELOG_FILENAMES.include? name
+      end
+      self.new(formula, candidate) if candidate
+    end
+  end
+
+  attr_reader :url
+
+  def initialize(formula, path)
+    super formula
+    @url = path
   end
 end
 
