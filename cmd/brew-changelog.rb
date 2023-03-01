@@ -3,6 +3,8 @@
 require_relative "../lib/changelog"
 require_relative "../lib/cache"
 
+require "cli/parser"
+
 VERSION = "0.0.1"
 
 def run!
@@ -13,7 +15,10 @@ def run!
 
   cache = ChangelogsCache.new
 
-  ARGV.formulae.each do |f|
+  args = Homebrew::CLI::Parser.new do
+  end.parse
+
+  args.named.to_formulae.each do |f|
     cached_url = cache.url_for_formula(f)
     if cached_url == ""
       puts <<~EOS

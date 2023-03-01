@@ -19,7 +19,6 @@ def formula_all_urls(f)
 end
 
 def open_browser(url)
-  ohai "Opening #{url}..." if ARGV.verbose?
   if url.start_with? "/"  # `open [file://]/...` doesn't start a browser
     puts "This formula has a local changelog here:\n    #{url}"
   else
